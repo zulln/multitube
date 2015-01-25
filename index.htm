@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Multiple Videos</title>
+        <meta charset="utf-8">
+        <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" type="image/png" href="favicon.ico">
+        <script src="func.js"></script>
+    </head>
+
+    <body onload="modes();">
+
+        <div id="logo">
+            <h1><a href="#">Multiple Videos</a></h1>
+        </div>
+
+        <div class="hidden" id="inputholder">
+            <h2>Get started...</h2>
+
+            <br>
+            <div id="inputs"></div>
+            <button class="inputButton" onclick="addInput(1);">+</button> <button class="inputButton" onclick="submit();">Submit</button>
+            <p id="infocheck"><a href="#about">Click here for info about the checkboxes</a></p>
+        </div>
+
+        <div class="hidden" id="videos"></div>
+
+        <div class="hidden" id="about">
+            <h2>About</h2>
+            <p>A small project coded by a guy called <a href="https://zulln.se">zulln</a>.
+                <br><br>
+
+                <b>Checkboxes</b><br>
+                It loops the video. In the future it maybe will be one the mutes the video, but I haven't got the time for that atm.
+
+                <br><br>
+
+                <b>Misc</b><br>
+                Empty links in input will be ignored, invalid be questioned.<br>
+                Because it uses normally iframes to play the video it may start with some delay if you have many videos. If that turns out to be a big problem it may be possible to do some magic with Youtubes API, but I haven't got the time for that just now.
+                <br><br>
+
+                <b>TODO:</b><br>
+                If I get time I will switch over to use the API and then be able to have a checkbox that mutes videos. That's not the case atm.
+                <br><br>
+
+                By default it will set the volume to 100%(unless the checkbox for muted is checked).
+                <br><br>
+
+                If you want your ad or link to your service here contact information can be found at <a href="https://zulln.se">https://zulln.se<a>.
+            </p>
+
+        </div>
+
+        <footer>
+            <p>
+                <a href="#about">About</a> - <a href="https://github.com/zulln">Github</a>
+            </p>
+        </footer>
+
+        <script>
+            window.onhashchange = function() {
+               modes();
+            };
+        </script>
+    </body>
+</html>
