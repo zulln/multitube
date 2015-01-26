@@ -36,8 +36,8 @@ function getInput(){
     return [links, starts, loops];
 }
 
-function boolToInt(input){
-    if (input){
+function boolToInt(x){
+    if (x){
         return 1;
     } else {
         return 0;
@@ -173,5 +173,8 @@ function addInput(amount){
     for (var i = 0; i < amount; i++){
         inputs += "<input class=\"linkInput\" title=\"URL of Youtuber-video\" type=\"link\" placeholder=\"https://www.youtube.com/watch?v=ic5z-0bbYsw\"><input class=\"start\" title=\"Start from...\" placeholder=\"hh:mm:ss\"><input class=\"loop\" title=\"Loop\" type=\"checkbox\"><br>";
     }
-    document.getElementById("inputs").innerHTML += inputs;
+
+    var newDiv = document.createElement("div");
+    newDiv.innerHTML = inputs;
+    document.getElementById("inputs").appendChild(newDiv);
 }
